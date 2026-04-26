@@ -1,66 +1,108 @@
-# 🌟 Golden Curator
+# 🚀 Golden Curator
 
-### Smart Event Management Platform
+### Scalable Event Management Platform (Full-Stack MERN)
 
-A full-stack web application designed to manage, curate, and explore events with an intuitive admin dashboard and modern UI.
-
-
-## 🧠 Features
-
-### 🎯 Core Features
-
-* 📌 Create, update, and delete events
-* ✅ Approve / reject event workflow
-* 🔍 Advanced filtering and search
-* 🧾 Organized admin dashboard
-
-### 👤 User Features
-
-* Browse events easily
-* Clean UI with responsive design
-* Real-time updates from backend
-
-### 🛠️ Admin Features
-
-* Manage all events centrally
-* Approval system for event moderation
-* Structured data handling
+<p align="center">
+  <img src="https://img.shields.io/badge/Architecture-Scalable-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frontend-React-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Backend-Node.js-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge" />
+</p>
 
 ---
 
-## 🏗️ Tech Stack
+## 📌 Overview
 
-### Frontend
+Golden Curator is a full-stack event management system designed with scalability, maintainability, and real-world workflows in mind.
 
-* React (Create React App)
-* Axios
-* React Router
-* CSS
+It implements a structured **event approval pipeline**, enabling administrators to control publishing while maintaining a seamless user experience.
 
-### Backend
+---
 
-* Node.js
-* Express.js
-* MongoDB (Mongoose)
+## 🎯 Problem Statement
+
+Modern event platforms often lack:
+
+* Structured approval workflows
+* Centralized admin control
+* Scalable backend architecture
+
+Golden Curator solves this using a **moderation-first system** with clear separation between pending and approved content.
+
+---
+
+## 🧠 System Design
+
+### High-Level Architecture
+
+```
+Frontend (React)
+        ↓
+API Layer (Axios)
+        ↓
+Backend (Express.js)
+        ↓
+Database (MongoDB)
+```
+
+---
+
+### Data Flow
+
+```
+User → Create Event → Stored as "Pending"
+        ↓
+Admin → Approve Event → Moves to "Approved"
+        ↓
+Frontend → Fetch Approved Events → Display
+```
+
+---
+
+## ✨ Features
+
+### 🎯 Core Features
+
+* Create, update, delete events
+* Admin approval workflow
+* Event filtering and search
+
+### 👤 Admin System
+
+* Centralized control panel
+* Event moderation system
+
+### 🎨 UI/UX
+
+* Responsive design
+* Clean dashboard interface
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer    | Technology           |
+| -------- | -------------------- |
+| Frontend | React, Axios, CSS    |
+| Backend  | Node.js, Express     |
+| Database | MongoDB (Mongoose)   |
+| Tools    | Git, GitHub, VS Code |
 
 ---
 
 ## 📁 Project Structure
 
-```bash
+```
 golden-curator2/
 │
 ├── backend/
-│   ├── config/
 │   ├── Controllers/
 │   ├── Models/
 │   ├── Routes/
-│   ├── seed/
-│   ├── uploads/
+│   ├── config/
 │   └── server.js
 │
 ├── frontend/
-│   ├── public/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
@@ -73,11 +115,11 @@ golden-curator2/
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone Repository
 
-```bash
+```
 git clone https://github.com/mathuppriya-dev/golden-curator2.git
 cd golden-curator2
 ```
@@ -86,93 +128,124 @@ cd golden-curator2
 
 ### 2️⃣ Install Dependencies
 
-#### Backend
-
-```bash
-cd backend
-npm install
 ```
-
-#### Frontend
-
-```bash
-cd ../frontend
-npm install
+cd backend && npm install
+cd ../frontend && npm install
 ```
 
 ---
 
-## 🔐 Environment Variables
+### 3️⃣ Environment Variables
 
-Create `.env` file inside `backend/`
+Create `.env` inside `backend/`
 
-```env
+```
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
 ```
 
 ---
 
-## ▶️ Run the Project
+### 4️⃣ Run Application
 
-### Start Backend
-
-```bash
+```
+# Backend
 cd backend
 npm start
-```
 
----
-
-### Start Frontend
-
-```bash
+# Frontend
 cd frontend
 npm start
 ```
 
 ---
 
-## 🌐 API Endpoints
+## 🌐 Complete API Documentation
 
-### Events
+### 🔗 Base URL
 
-* `GET /api/events` → Get all events
-* `POST /api/events` → Create event
-* `PUT /api/events/:id` → Update event
-* `DELETE /api/events/:id` → Delete event
-
----
-
-## 📦 Deployment
-
-### Recommended Platforms
-
-* Frontend → Vercel / Netlify
-* Backend → Render / Railway
-* Database → MongoDB Atlas
+```
+http://localhost:5000/api
+```
 
 ---
 
-## 🧹 Best Practices Followed
+## 📌 Events API
 
-* Clean folder structure
-* Separation of concerns (MVC)
-* Environment variables secured
-* `.gitignore` configured properly
-* Scalable backend architecture
+| Method | Endpoint                | Description         |
+| ------ | ----------------------- | ------------------- |
+| GET    | /api/events             | Get all events      |
+| GET    | /api/events/approved    | Get approved events |
+| GET    | /api/events/pending     | Get pending events  |
+| POST   | /api/events             | Create event        |
+| PUT    | /api/events/:id         | Update event        |
+| DELETE | /api/events/:id         | Delete event        |
+| PUT    | /api/events/approve/:id | Approve event       |
+| PUT    | /api/events/reject/:id  | Reject event        |
 
 ---
 
-## 👨‍💻 Author
+### 📥 Example Response
 
-**Mathuppriya Naguleswaran**
+```json
+{
+  "total": 5,
+  "events": [
+    {
+      "_id": "event_id",
+      "title": "Gallery Night Draft",
+      "category": "Arts",
+      "location": "Kegalle",
+      "status": "pending"
+    }
+  ]
+}
+```
 
-* GitHub: https://github.com/mathuppriya-dev
+---
+
+## 👤 Users API
+
+| Method | Endpoint   | Description   |
+| ------ | ---------- | ------------- |
+| GET    | /api/users | Get all users |
+| POST   | /api/users | Create user   |
+
+---
+
+## 📁 File Upload API
+
+| Method | Endpoint    | Description  |
+| ------ | ----------- | ------------ |
+| POST   | /api/upload | Upload image |
+
+---
+
+## 📊 Scalability Considerations
+
+* Stateless backend → horizontal scaling
+* Modular architecture → easy feature expansion
+* MongoDB → flexible schema
+
+---
+
+
+## 🚀 Deployment
+
+| Service  | Platform      |
+| -------- | ------------- |
+| Frontend | Vercel        |
+| Backend  | Render        |
+| Database | MongoDB Atlas |
+
+---
+
+
+## 👨‍💻 Author : **Mathuppriya Naguleswaran**
+🔗 https://github.com/mathuppriya-dev
 
 ---
 
 ## 📜 License
 
-This project is open-source and available under the MIT License.
-
+MIT License © 2026
