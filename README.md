@@ -71,6 +71,7 @@ Frontend → Fetch Approved Events → Display
 
 * Centralized control panel
 * Event moderation system
+* Can download users list as CSV file
 
 
 ### 👤 User Features
