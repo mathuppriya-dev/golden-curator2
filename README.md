@@ -91,6 +91,13 @@ Frontend → Fetch Approved Events → Display
 - Smooth UI interactions
 - Optimized user experience
 
+## 📈 Engineering Highlights
+- Designed a status-based event workflow (pending → approved)
+- Implemented RESTful API structure with modular routing
+- Optimized frontend-backend communication using Axios
+- Built reusable UI components for scalability
+- Implemented client-side image cropping for better UX
+
 ---
 
 ## 🛠️ Tech Stack
