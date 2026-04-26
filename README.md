@@ -112,7 +112,19 @@ golden-curator2/
 ├── package.json
 └── README.md
 ```
+## 📸 Screenshots
 
+### 🏠 Dashboard
+![Dashboard](./screenshots/Admin_dashboard.png)
+
+### 📅 Events Page
+![Events](./screenshots/events.png)
+
+### ⏳Rejected Events
+![Rejected](./screenshots/Rejected.png)
+
+### ✅ Approved Events
+![Add users](./screenshots/user.png)
 ---
 
 ## ⚙️ Setup Instructions
