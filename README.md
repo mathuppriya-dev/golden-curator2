@@ -72,10 +72,24 @@ Frontend → Fetch Approved Events → Display
 * Centralized control panel
 * Event moderation system
 
+
+### 👤 User Features
+- Browse and explore events seamlessly  
+- Responsive and user-friendly interface  
+- Real-time updates from backend  
+- Profile image upload with client-side cropping for better UX
+
+  
 ### 🎨 UI/UX
 
 * Responsive design
 * Clean dashboard interface
+
+## 🎨 UX Enhancements
+
+- Image cropping before upload (profile customization)
+- Smooth UI interactions
+- Optimized user experience
 
 ---
 
@@ -123,7 +137,7 @@ golden-curator2/
 ### ⏳Rejected Events
 ![Rejected](./screenshots/Rejected.png)
 
-### ✅ Approved Events
+### ✅ Approved Users
 ![Add users](./screenshots/user.png)
 ---
 
